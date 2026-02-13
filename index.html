@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sushi Experience™</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ffd1dc, #ff9aa2);
+            color: #222;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        h3 {
+            margin-top: 25px;
+            font-size: 22px;
+            color: #444;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Zdjęcie z podpisem */
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 320px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            margin: 0;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05) rotate(-1deg);
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        /* Listy bez kropek */
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        li {
+            margin: 12px 0;
+            padding-left: 0;
+        }
+
+        .subtle {
+            opacity: 0.7;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            opacity: 0.6;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        /* ANIMACJE */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* DYNAMIC BACKGROUND */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15), transparent 60%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.15), transparent 60%);
+            pointer-events: none;
+            animation: bgMove 15s linear infinite;
+        }
+
+        @keyframes bgMove {
+            0% { background-position: 0% 0%, 100% 100%; }
+            50% { background-position: 100% 0%, 0% 100%; }
+            100% { background-position: 0% 0%, 100% 100%; }
+        }
+
+        /* SERDUSZKA */
+        .heart {
+            position: absolute;
+            color: #ff6b6b;
+            font-size: 24px;
+            animation: fly 1.5s forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fly {
+            0% { opacity: 1; transform: translate(0, 0) scale(1); }
+            50% { opacity: 1; transform: translate(var(--x), var(--y)) scale(1.3); }
+            100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(0.5); }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Walę w tynkowe Sushi</h1>
+    <p class="subtle">Jedyny klient: <span id="agatka" style="font-weight:bold; text-decoration: underline; color: #ff3b6b;">Agatka</span>. Rezerwacja zamknięta. Michelin jeszcze nie wie.</p>
+
+    <div class="image-container">
+        <img src="sushi.png" alt="Szef kuchni, który przeszedł transformację">
+        <div class="caption">👨‍🍳 Patryk – Szef kuchni</div>
+    </div>
+
+    <div class="card">
+        <h2>O Szefie</h2>
+        <p>
+            Patryk – człowiek, który jeszcze wczoraj googlował
+            „jak poprawnie trzymać nóż do sushi”,
+            a dziś serwuje maki z miną jakby prowadził własny program kulinarny.
+        </p>
+        <p>
+            Specjalizacje:
+        </p>
+        <ul>
+            <li>- Krojenie z poważną miną</li>
+            <li>- Układanie ryżu z przesadną koncentracją</li>
+            <li>- Mówienie „hmm” jakby to była filozofia smaku</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Dzisiejsze Menu</h2>
+
+        <h3>🍣 Rolki</h3>
+        <ul>
+            <li>- Tempura Maki – chrupie tak, że sąsiedzi wiedzą</li>
+            <li>- California Maki – klasyk, bo nie kombinujemy za bardzo</li>
+            <li>- Surimi Maki – udaje kraba i robi to z godnością</li>
+        </ul>
+
+        <h3>🍵 Napoje</h3>
+        <ul>
+            <li>- Matcha z syropem passionfruit – niebanalna, ceremonialna, pyszna</li>
+            <li>- Kieliszek umeshu – bo człowiek nie wielbłąd, napić się musi</li>
+        </ul>
+    </div>
+
+    <footer>
+        Jeśli coś smakuje dziwnie – to koncept. Jeśli coś smakuje dobrze – to talent.
+    </footer>
+
+</div>
+
+<script>
+    // Funkcja wybuch serduszek
+    const agatka = document.getElementById('agatka');
+    agatka.addEventListener('click', () => {
+        for (let i = 0; i < 30; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '❤️';
+            const x = (Math.random() - 0.5) * 400 + 'px';
+            const y = -Math.random() * 300 + 'px';
+            heart.style.setProperty('--x', x);
+            heart.style.setProperty('--y', y);
+            heart.style.left = (agatka.getBoundingClientRect().left + agatka.offsetWidth/2) + 'px';
+            heart.style.top = (agatka.getBoundingClientRect().top + window.scrollY) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1500);
+        }
+    });
+</script>
+
+</body>
+</html>
