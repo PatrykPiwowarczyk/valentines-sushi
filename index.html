@@ -2,6 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sushi Experience™</title>
     <style>
         * { box-sizing: border-box; }
@@ -17,34 +18,34 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 95%;
             margin: auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 6vw;
             margin-bottom: 10px;
             animation: fadeIn 1s ease forwards;
         }
 
         h2 {
-            margin-top: 40px;
-            font-size: 28px;
+            margin-top: 30px;
+            font-size: 5vw;
             color: #333;
         }
 
         h3 {
-            margin-top: 25px;
-            font-size: 22px;
+            margin-top: 20px;
+            font-size: 4vw;
             color: #444;
         }
 
         p {
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 4vw;
         }
 
-        /* Zdjęcie z podpisem */
         .image-container {
             position: relative;
             display: inline-block;
@@ -52,76 +53,74 @@
         }
 
         .image-container img {
-            width: 320px;
+            width: 80vw;
+            max-width: 350px;
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             margin: 0;
             transition: transform 0.5s ease;
         }
 
-        .image-container img:hover {
+        .image-container img:active {
             transform: scale(1.05) rotate(-1deg);
         }
 
         .caption {
             position: absolute;
-            bottom: 12px;
+            bottom: 8px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0,0,0,0.6);
             color: #fff;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 12px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 3.5vw;
         }
 
         .card {
             background: rgba(255,255,255,0.9);
             border-radius: 20px;
-            padding: 30px 25px;
+            padding: 20px;
             margin: 20px 0;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
+        .card:active {
+            transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.25);
         }
 
-        /* Listy bez kropek */
         ul {
             list-style: none;
             padding: 0;
-            font-size: 18px;
+            font-size: 4vw;
         }
 
         li {
-            margin: 12px 0;
+            margin: 10px 0;
             padding-left: 0;
         }
 
         .subtle {
             opacity: 0.7;
-            font-size: 14px;
+            font-size: 3.5vw;
             cursor: pointer;
         }
 
         footer {
-            margin-top: 50px;
-            font-size: 14px;
+            margin-top: 30px;
+            font-size: 3.5vw;
             opacity: 0.6;
             animation: fadeIn 2s ease forwards;
         }
 
-        /* ANIMACJE */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px);}
+            from { opacity: 0; transform: translateY(10px);}
             to { opacity: 1; transform: translateY(0);}
         }
 
-        /* DYNAMIC BACKGROUND */
         body::before {
             content: "";
             position: fixed;
@@ -139,17 +138,16 @@
             100% { background-position: 0% 0%, 100% 100%; }
         }
 
-        /* SERDUSZKA */
         .heart {
             position: absolute;
             color: #ff6b6b;
-            font-size: 24px;
+            font-size: 5vw;
             animation: fly 1.5s forwards;
             pointer-events: none;
         }
 
         @keyframes fly {
-            0% { opacity: 1; transform: translate(0, 0) scale(1); }
+            0% { opacity: 1; transform: translate(0,0) scale(1); }
             50% { opacity: 1; transform: translate(var(--x), var(--y)) scale(1.3); }
             100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(0.5); }
         }
@@ -161,7 +159,10 @@
 <div class="container">
 
     <h1>Walę w tynkowe Sushi</h1>
-    <p class="subtle">Jedyny klient: <span id="agatka" style="font-weight:bold; text-decoration: underline; color: #ff3b6b;">Agatka</span>. Rezerwacja zamknięta. Michelin jeszcze nie wie.</p>
+    <p class="subtle">
+        Jedyny klient: <span id="agatka" style="font-weight:bold; text-decoration: underline; color: #ff3b6b;">Agatka</span>.
+        Rezerwacja zamknięta. Michelin jeszcze nie wie.
+    </p>
 
     <div class="image-container">
         <img src="sushi.png" alt="Szef kuchni, który przeszedł transformację">
@@ -175,30 +176,26 @@
             „jak poprawnie trzymać nóż do sushi”,
             a dziś serwuje maki z miną jakby prowadził własny program kulinarny.
         </p>
-        <p>
-            Specjalizacje:
-        </p>
+        <p>Specjalizacje:</p>
         <ul>
-            <li>- Krojenie z poważną miną</li>
-            <li>- Układanie ryżu z przesadną koncentracją</li>
-            <li>- Mówienie „hmm” jakby to była filozofia smaku</li>
+            <li>Krojenie z poważną miną</li>
+            <li>Układanie ryżu z przesadną koncentracją</li>
+            <li>Mówienie „hmm” jakby to była filozofia smaku</li>
         </ul>
     </div>
 
     <div class="card">
         <h2>Dzisiejsze Menu</h2>
-
         <h3>🍣 Rolki</h3>
         <ul>
-            <li>- Tempura Maki – chrupie tak, że sąsiedzi wiedzą</li>
-            <li>- California Maki – klasyk, bo nie kombinujemy za bardzo</li>
-            <li>- Surimi Maki – udaje kraba i robi to z godnością</li>
+            <li>Tempura Maki – chrupie tak, że sąsiedzi wiedzą</li>
+            <li>California Maki – klasyk, bo nie kombinujemy za bardzo</li>
+            <li>Surimi Maki – udaje kraba i robi to z godnością</li>
         </ul>
-
         <h3>🍵 Napoje</h3>
         <ul>
-            <li>- Matcha z syropem passionfruit – niebanalna, ceremonialna, pyszna</li>
-            <li>- Kieliszek umeshu – bo człowiek nie wielbłąd, napić się musi</li>
+            <li>Matcha z syropem passionfruit – niebanalna, ceremonialna, pyszna</li>
+            <li>Kieliszek umeshu – bo człowiek nie wielbłąd, napić się musi</li>
         </ul>
     </div>
 
@@ -209,15 +206,14 @@
 </div>
 
 <script>
-    // Funkcja wybuch serduszek
     const agatka = document.getElementById('agatka');
     agatka.addEventListener('click', () => {
         for (let i = 0; i < 30; i++) {
             const heart = document.createElement('div');
             heart.classList.add('heart');
             heart.textContent = '❤️';
-            const x = (Math.random() - 0.5) * 400 + 'px';
-            const y = -Math.random() * 300 + 'px';
+            const x = (Math.random() - 0.5) * 70 + 'vw';
+            const y = -Math.random() * 40 + 'vh';
             heart.style.setProperty('--x', x);
             heart.style.setProperty('--y', y);
             heart.style.left = (agatka.getBoundingClientRect().left + agatka.offsetWidth/2) + 'px';
