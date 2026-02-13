@@ -13,6 +13,17 @@
     <style>
         * { box-sizing: border-box; }
 
+        /* górny pasek na notch iPhone */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: env(safe-area-inset-top);
+            background: #ff9aa2; /* różowy */
+            z-index: 9999;
+        }
+
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
@@ -21,7 +32,7 @@
             text-align: center;
             overflow-x: hidden;
             position: relative;
-            padding-top: env(safe-area-inset-top); /* dla notcha iPhone */
+            padding-top: env(safe-area-inset-top); /* treść nie pod notch */
         }
 
         .container {
@@ -30,28 +41,10 @@
             padding: 20px;
         }
 
-        h1 {
-            font-size: 6vw;
-            margin-bottom: 10px;
-            animation: fadeIn 1s ease forwards;
-        }
-
-        h2 {
-            margin-top: 30px;
-            font-size: 5vw;
-            color: #333;
-        }
-
-        h3 {
-            margin-top: 20px;
-            font-size: 4vw;
-            color: #444;
-        }
-
-        p {
-            line-height: 1.5;
-            font-size: 4vw;
-        }
+        h1 { font-size: 6vw; margin-bottom: 10px; animation: fadeIn 1s ease forwards; }
+        h2 { margin-top: 30px; font-size: 5vw; color: #333; }
+        h3 { margin-top: 20px; font-size: 4vw; color: #444; }
+        p { line-height: 1.5; font-size: 4vw; }
 
         .image-container {
             position: relative;
@@ -68,9 +61,7 @@
             transition: transform 0.5s ease;
         }
 
-        .image-container img:active {
-            transform: scale(1.05) rotate(-1deg);
-        }
+        .image-container img:active { transform: scale(1.05) rotate(-1deg); }
 
         .caption {
             position: absolute;
@@ -99,16 +90,8 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.25);
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            font-size: 4vw;
-        }
-
-        li {
-            margin: 10px 0;
-            padding-left: 0;
-        }
+        ul { list-style: none; padding: 0; font-size: 4vw; }
+        li { margin: 10px 0; padding-left: 0; }
 
         .subtle {
             opacity: 0.7;
@@ -116,19 +99,11 @@
             cursor: pointer;
         }
 
-        footer {
-            margin-top: 30px;
-            font-size: 3.5vw;
-            opacity: 0.6;
-            animation: fadeIn 2s ease forwards;
-        }
+        footer { margin-top: 30px; font-size: 3.5vw; opacity: 0.6; animation: fadeIn 2s ease forwards; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
 
-        /* Dynamic background */
+        /* dynamic background */
         body::before {
             content: "";
             position: fixed;
@@ -140,13 +115,9 @@
             animation: bgMove 15s linear infinite;
         }
 
-        @keyframes bgMove {
-            0% { background-position: 0% 0%, 100% 100%; }
-            50% { background-position: 100% 0%, 0% 100%; }
-            100% { background-position: 0% 0%, 100% 100%; }
-        }
+        @keyframes bgMove { 0% { background-position: 0% 0%, 100% 100%; } 50% { background-position: 100% 0%, 0% 100%; } 100% { background-position: 0% 0%, 100% 100%; } }
 
-        /* Serduszka */
+        /* serduszka */
         .heart {
             position: absolute;
             color: #ff6b6b;
@@ -164,6 +135,9 @@
     </style>
 </head>
 <body>
+
+<!-- górny różowy pasek -->
+<div class="top-bar"></div>
 
 <div class="container">
 
